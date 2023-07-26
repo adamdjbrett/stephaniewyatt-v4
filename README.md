@@ -2,6 +2,7 @@
 ### Homepage
     - remove github
     - show academia.edu
+    - show google scholar
     - show ORCID
 ### Menu
     - show contact
