@@ -3,6 +3,7 @@ layout: post
 title: "My Life in Books"
 date: 2022-10-19T08:23:42+00:00
 permalink: /my-life-books/
+category: blog
 star: true
 author: stephaniewyatt
 description: Markdown summary with different options
