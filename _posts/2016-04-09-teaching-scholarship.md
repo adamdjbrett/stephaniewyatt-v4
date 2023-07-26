@@ -1,12 +1,8 @@
 ---
+layout: post
 title: "Teaching &#038; Scholarship"
-excerpt_separator: "<!--more-->"
 date: 2016-04-09T16:36:14+00:00
-read_time: true
 permalink: /teaching/
-tags:
-  - teaching
-  - scholarship
 ---
 “To me the willingness to change and be changed, to remain always open is a defining principle of intellectual life”
 ~Parker Palmer in *Teaching Community*

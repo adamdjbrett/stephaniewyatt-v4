@@ -1,9 +1,8 @@
 ---
+layout: post
 title: "Statement of Faith"
 date: 2020-05-13T08:23:42+00:00
 permalink: /faith-statement/
-tags:
-  - ministry
 ---
 ## Spiritual Autobiography and Ministerial Identity
 

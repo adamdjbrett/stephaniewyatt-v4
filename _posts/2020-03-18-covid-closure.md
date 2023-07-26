@@ -1,11 +1,7 @@
 ---
 title: "Pastoral note on COVID-19"
 date: 2020-03-18T15:04:24+00:00
-image: /assets/images/splash/solidarity-4924028_1920.jpg
 permalink: /covid/
-tags:
-  - pastor
-  - note
 ---
 Dear Members and Friends of West Baptist Church,
 

@@ -16,10 +16,10 @@ dark-theme: auto
 # If you want to include your resume, set to true
 # and specify source (external or local).
 resume: true
-resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-external: false
+resume-url: /documents/smwyatt-cv.pdf
 
-url: 
+url: https://stephanieywatt-v4.netlify.app
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
@@ -36,8 +36,8 @@ disqus:
 #facebook: myfacebook
 #twitter: mytwitter
 #instagram: myinstagram
-linkedin: https://www.linkedin.com/in/stephaniemwyatt/
 #github: mygithub
+linkedin: https://www.linkedin.com/in/stephaniemwyatt/
 email: swyatt@ibcnashville.org
 
 authors:

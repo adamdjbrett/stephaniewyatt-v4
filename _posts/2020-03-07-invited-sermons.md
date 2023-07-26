@@ -1,11 +1,7 @@
 ---
 title: "Invited Sermons and Presentations"
-excerpt_separator: "<!--more-->"
 date: 2020-03-07T15:04:24+00:00
 permalink: /invited-sermons/
-tags:
-  - sermons
-  - presentations
 ---
 
   - _First Baptist Church Murfreesboro,Tennessee_ &mdash; “We’re All in This Together,” Sermon for the Martha Stearns Marshall Month of Preaching, February 19, 2017

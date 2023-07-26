@@ -3,12 +3,7 @@ layout: page
 title: "Contact"
 permalink: /contact/
 ---
-- [stephanie@stephaniewyatt.net](mailto:stephanie@stephaniewyatt.net)
-- [vCard](/documents/stephaniewyatt.tel.vcf)
-- [LinkedIn](http://stephaniewyatt.in)
-- [academia.edu](https://tcu.academia.edu/StephanieWyatt)
-- [Google Scholar](https://scholar.google.com/citations?user=43gFBr8AAAAJ)
-- [ORCID](https://orcid.org/0000-0002-4472-5316)
+Lets connect and chat
 
 <!-- modify this form HTML and place wherever you want your form -->
 
