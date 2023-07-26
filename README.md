@@ -6,11 +6,19 @@
     - show google scholar
     - show ORCID
 ### Menu
-    - show contact
+    - show contact page
+    - increase font size and readiblity
 ### Footer
     -  add link to copyright
 ### Blog
     - simplify blog allow posting without having to set category, star, author, description
+### Get Favicon to show
+### Body Font
+    - increase body font size
+    - increase body font weight
+    - increase contrast between body font and background color for light and dark modes. 
+    - increase readibility
+
 
 <p align="center">
     <h2 align="center">Indigo Minimalist Jekyll Template - <a href="https://sergiokopplin.github.io/indigo/">Demo</a></h2>
