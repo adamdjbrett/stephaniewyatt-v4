@@ -8,8 +8,6 @@
 ### Menu
     - show contact page
     - increase font size and readiblity
-### Footer
-    -  add link to copyright
 ### Blog
     - simplify blog allow posting without having to set category, star, author, description
 ### Get Favicon to show
