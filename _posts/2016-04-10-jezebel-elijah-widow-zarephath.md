@@ -3,9 +3,10 @@ layout: post
 title: "Jezebel, Elijah, and the Widow of Zarephath"
 date: 2016-04-10T15:04:24+00:00
 permalink: /jezebel/
+category: blog
 star: true
 author: stephaniewyatt
-description: Markdown summary with different options
+description: "This article offers a dialogical examination of 1 Kgs 17–19 that deconstructs traditionally accepted characterizations of Jezebel, Elijah, and the Widow of Zarephath."
 ---
 ## Abstract: ##
 
