@@ -1,5 +1,6 @@
 ## Changes to make
 ### Homepage
+    - reconfigure social links to use '_data/social.yml' and have a wide array of options like this [post](https://vivekkrish.com/indigo/adding-configuring-social-links/)
     - remove github
     - show academia.edu
     - show google scholar

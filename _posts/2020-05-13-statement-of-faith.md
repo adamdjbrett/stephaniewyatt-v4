@@ -4,7 +4,6 @@ title: "Statement of Faith"
 date: 2020-05-13T08:23:42+00:00
 permalink: /faith-statement/
 category: blog
-star: true
 author: stephaniewyatt
 description: "Spiritual Autobiography and Ministerial Identity"
 ---

@@ -4,7 +4,6 @@ title: "My Life in Books"
 date: 2022-10-19T08:23:42+00:00
 permalink: /my-life-books/
 category: blog
-star: true
 author: stephaniewyatt
 description: "A few years ago I heard a radio interview on NPR with an author of a novel in which the narrator introduces each character in terms of three books that best describes him or her."
 ---

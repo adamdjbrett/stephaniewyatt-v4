@@ -4,7 +4,6 @@ title: "Teaching &#038; Scholarship"
 date: 2016-04-09T16:36:14+00:00
 permalink: /teaching/
 category: blog
-star: true
 author: stephaniewyatt
 description: "Teaching and learning empower students to tell their own story, converse with the story of a discipline, and organize their own cognitive map for shaping their future story."
 ---
