@@ -3,6 +3,8 @@ layout: post
 title: "My Life in Books"
 date: 2022-10-19T08:23:42+00:00
 permalink: /my-life-books/
+author: stephaniewyatt
+description: Markdown summary with different options
 ---
 A few years ago I heard a radio interview on NPR with an author of a novel in which the narrator introduces each character in terms of three books that best describes him or her. I pondered this idea in search of three books that would form a composite image of who I am and what my values are. I selected Jane Austen's *Pride and Prejudice*, Philip Halle's *Lest Innocent Blood Be Shed*, and Christopher Hill's *Holidays and Holy Nights*.
 
