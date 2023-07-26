@@ -3,6 +3,7 @@ layout: post
 title: "Jezebel, Elijah, and the Widow of Zarephath"
 date: 2016-04-10T15:04:24+00:00
 permalink: /jezebel/
+star: true
 author: stephaniewyatt
 description: Markdown summary with different options
 ---

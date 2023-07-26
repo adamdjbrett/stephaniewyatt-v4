@@ -2,6 +2,7 @@
 title: "Invited Sermons and Presentations"
 date: 2020-03-07T15:04:24+00:00
 permalink: /invited-sermons/
+star: true
 author: stephaniewyatt
 description: Markdown summary with different options
 ---
