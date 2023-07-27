@@ -5,13 +5,28 @@ permalink: /humans.txt
 exclude: true
 ---
 
+/* TEAM */
+Author: Adam DJ Brett
+Contact: adam [at] adamdjbrett.com
+Twitter: @__adjb
+Web: Adamdjbrett.com | adamdj.tel
+From: Syracuse University, Syracuse, NY
+
+
+/* THANKS */
+Name: WebexTheme
+Role: Creator of the Logistek Thme
+Site: https://themeforest.net/item/logistek-logistics-transportation-template/29852202
+
+Name: Mesin Kasir
+Role: Jekyller. Converted theme to Jekyll
+Github: @mesinkasir
+Site: https://www.fiverr.com/freelancers/creativitas
+
+
 /* SITE */
+
 Last Updated: {{ site.time | date:"%Y/%m/%d" }}
 Standards: HTML5, CSS3
-Components: {% for dependency in site.github.versions %}{{ dependency[0] }}{% if forloop.rindex0 > 0 %}, {% endif %}{% endfor %}
-
-/* TEAM */
-{% for contributor in site.github.contributors %}
-Name: {{ contributor.login }}
-Site: {{ contributor.html_url }}
-{% endfor %}
+Software: Sublime Text, Chrome, Jekyll, Git
+Components: 
