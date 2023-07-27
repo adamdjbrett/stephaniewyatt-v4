@@ -1,7 +1,7 @@
 # main text of home
 title: Stephanie M. Wyatt
 bio: "Minister, Community Builder, Teacher-Scholar"
-
+favicon: /assets/images/favicon/favicon.png
 # Twitter
 # description: 
 
@@ -66,6 +66,7 @@ pagination:
 # if you don't need "about" or "blog", comment them out below
 about: true
 blog: true
+contact: true
 
 # do you want to show the "read time" of the posts?
 read-time: true
