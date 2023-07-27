@@ -1,0 +1,16 @@
+  - name: facebook
+    url: https://facebook.com/username
+    icon: fa-brands fa-facebook
+  - name: twitter
+    url: https://twitter.com/twitteruser
+    icon: fa-brands fa-twitter
+  - name: instagram
+    url: https://instagram.com/instagramuser
+    icon: fa-brands fa-instagram
+  - name: orchid
+    url: https://orchid.com/orchiduser
+    icon: fa-brands fa-orcid
+  - name: google scholar
+    url: https://scholar.google.com/orchiduser
+    icon: fa-brands fa-google
+    
