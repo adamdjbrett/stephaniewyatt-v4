@@ -1,11 +1,11 @@
 repo_name: adamdjbrett/stephaniewyatt-v4
-report_id: c3c23d390adf85b0748fe7274c7ea09d
+report_id: 676d51da3822f6bc6d4626ecdd31ae6e
 repo_type: Public
-timestamp: '2023-11-15T03:25:19+00:00'
+timestamp: '2023-12-14T10:41:47+00:00'
 requested_by: adamdjbrett
 provider: github
 branch: gh-pages
-detected_tools_count: 7
+detected_tools_count: 15
 tools:
 - name: Ruby
   description: A dynamic, interpreted, open source programming language with a focus
@@ -17,6 +17,17 @@ tools:
   sub_category: Languages
   image_url: https://img.stackshare.io/service/989/ruby.png
   detection_source: Repo Metadata
+- name: pgvector
+  description: Open-source vector similarity search for Postgres
+  website_url: https://github.com/pgvector/pgvector/
+  open_source: false
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Database Tools
+  image_url: https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png
+  detection_source: humans.txt
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2023-07-26 23:17:43.000000000 Z
 - name: Git
   description: Fast, scalable, distributed revision control system
   website_url: http://git-scm.com/
@@ -37,6 +48,38 @@ tools:
   detection_source: Gemfile
   last_updated_by: Sergio Kopplin
   last_updated_on: 2016-01-23 22:46:42.000000000 Z
+- name: HTML
+  description: Hypertext Markup Language for creating web pages.
+  website_url: http://
+  open_source: false
+  hosted_saas: false
+  image_url: https://img.stackshare.io/service/2270/no-img-open-source.png
+  detection_source: 404.html
+  last_updated_by: spencexyz
+  last_updated_on: 2018-02-15 01:59:24.000000000 Z
+- name: LangChain
+  description: Build AI apps with LLMs through composability
+  website_url: https://github.com/hwchase17/langchain
+  open_source: true
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Model Tools
+  image_url: https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg
+  detection_source: humans.txt
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2023-07-26 23:17:43.000000000 Z
+- name: github-pages
+  description: Bootstrap the GitHub Pages Jekyll environment locally
+  package_url: https://rubygems.org/github-pages
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
+  detection_source: Gemfile
+  last_updated_by: Sérgio A. Kopplin
+  last_updated_on: 2020-01-21 13:35:08.000000000 Z
 - name: html-proofer
   description: Test your rendered HTML files to make sure they're accurate
   package_url: https://rubygems.org/html-proofer
@@ -58,6 +101,45 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19149/default_b0a1033a29112f6f50b1dd3157e5fbf94dd2778a.png
+  detection_source: Gemfile
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2023-07-26 22:57:31.000000000 Z
+- name: jekyll-gist
+  description: Liquid tag for displaying GitHub Gists in Jekyll sites
+  package_url: https://rubygems.org/jekyll-gist
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
+  detection_source: Gemfile
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2023-07-26 22:57:31.000000000 Z
+- name: jekyll-paginate-v2
+  description: An enhanced zero-configuration in-place replacement for the now decomissioned
+    built-in jekyll-paginate gem
+  package_url: https://rubygems.org/jekyll-paginate-v2
+  version: '2.0'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
+  detection_source_url: https://github.com/adamdjbrett/stephaniewyatt-v4/blob/gh-pages/Gemfile
+  detection_source: Gemfile
+  last_updated_by: Adam DJ Brett
+  last_updated_on: 2023-07-26 22:57:31.000000000 Z
+- name: jekyll-redirect-from
+  description: Seamlessly specify multiple redirection URLs for your pages and posts
+  package_url: https://rubygems.org/jekyll-redirect-from
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
   detection_source: Gemfile
   last_updated_by: Adam DJ Brett
   last_updated_on: 2023-07-26 22:57:31.000000000 Z
@@ -86,3 +168,15 @@ tools:
   detection_source: Gemfile
   last_updated_by: Adam DJ Brett
   last_updated_on: 2023-07-26 22:57:31.000000000 Z
+- name: jemoji
+  description: GitHub-flavored emoji plugin for Jekyll
+  package_url: https://rubygems.org/jemoji
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: RubyGems Packages
+  image_url: https://img.stackshare.io/package/rubygems/image.png
+  detection_source: Gemfile
+  last_updated_by: Sylvain METAYER
+  last_updated_on: 2018-11-30 10:30:18.000000000 Z
