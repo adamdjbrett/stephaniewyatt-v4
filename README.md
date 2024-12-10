@@ -1,3 +1,4 @@
+[![pages-build-deployment](https://github.com/adamdjbrett/stephaniewyatt-v4/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/adamdjbrett/stephaniewyatt-v4/actions/workflows/pages/pages-build-deployment)
 ## Changes to make
 ### Homepage
     - reconfigure social links to use '_data/social.yml' and have a wide array of options like this [post](https://vivekkrish.com/indigo/adding-configuring-social-links/)
