@@ -1,4 +1,5 @@
-[![pages-build-deployment](https://github.com/adamdjbrett/stephaniewyatt-v4/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/adamdjbrett/stephaniewyatt-v4/actions/workflows/pages/pages-build-deployment)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f902bf40-c9ef-4bcf-8ddd-a336fe1a99f3/deploy-status)](https://app.netlify.com/sites/thriving-heliotrope-0478d7/deploys)
+
 ## Changes to make
 ### Homepage
     - reconfigure social links to use '_data/social.yml' and have a wide array of options like this [post](https://vivekkrish.com/indigo/adding-configuring-social-links/)
