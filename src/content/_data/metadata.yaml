@@ -42,6 +42,15 @@ person:
       name: Immanuel Baptist Church
     - "@type": CollegeOrUniversity
       name: Syracuse University
+  spouse:
+    "@type": Person
+    name: Adam DJ Brett
+    url: https://adamdjbrett.com/
+  relatedTo:
+    "@type": Person
+    name: Kaitlyn Brett
+    url: https://kaitlynbrett.com/
+    description: Sister-in-law of Stephanie M. Wyatt
   alumniOf:
     - "@type": CollegeOrUniversity
       name: Brite Divinity School
