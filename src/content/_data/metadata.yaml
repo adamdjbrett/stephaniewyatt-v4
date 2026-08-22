@@ -141,6 +141,8 @@ publications:
   - "@type": ScholarlyArticle
     "@id": https://stephaniewyatt.net/jezebel/#article
     name: "Jezebel, Elijah, and the Widow of Zarephath: A Ménage à Trois Who Estrange the Holy and Make Holy the Strange"
+    headline: "Jezebel, Elijah, and the Widow of Zarephath: A Ménage à Trois Who Estrange the Holy and Make Holy the Strange"
+    image: https://stephaniewyatt.net/images/JSOT_F1.medium.gif
     url: https://stephaniewyatt.net/jezebel/
     sameAs: https://doi.org/10.1177/0309089212438020
     author:
