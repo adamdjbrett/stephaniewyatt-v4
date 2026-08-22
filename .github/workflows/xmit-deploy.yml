@@ -1,0 +1,62 @@
+name: Build and deploy to XMIT
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: XMIT site override
+        required: false
+        type: string
+
+concurrency:
+  group: xmit-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      XMIT_SITE: stephaniewyatt.net@268
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: Build site
+        run: npm run build
+
+      - name: Validate build
+        run: |
+          npm run check
+          test -f _site/index.html
+          test -f _site/sitemap.xml
+          test -f _site/feed.xml
+          test -f _site/feed.rss
+          test -f _site/feed.json
+          test -f _site/twtxt.txt
+          test -f _site/pagefind/pagefind.js
+
+      - name: Deploy to XMIT
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+        env:
+          XMIT_KEY: ${{ secrets.XMIT_KEY }}
+          XMIT_SITE_INPUT: ${{ inputs.site }}
+        run: |
+          test -n "$XMIT_KEY" || { echo "XMIT_KEY secret is not set" >&2; exit 1; }
+          SITE="${XMIT_SITE_INPUT:-$XMIT_SITE}"
+          npx -y @xmit.co/xmit@0.5.2-0 "$SITE" _site
