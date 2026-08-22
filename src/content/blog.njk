@@ -1,0 +1,16 @@
+---
+layout: page.njk
+title: Writing
+kicker: Archive
+description: Sermons, scholarship, teaching, ministry, and personal reflection.
+permalink: /blog/
+---
+<div class="archive-list">
+{% for post in collections.posts | reverse %}
+  <article>
+    <p><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% if post.data.tags %} · {{ post.data.tags | join(" · ") }}{% endif %}</p>
+    <h2><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
+    {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+  </article>
+{% endfor %}
+</div>

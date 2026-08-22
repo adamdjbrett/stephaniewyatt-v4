@@ -1,0 +1,10 @@
+---
+permalink: /twtxt.txt
+eleventyExcludeFromCollections: true
+---
+# nick = stephaniewyatt
+# url = {{ metadata.url }}/twtxt.txt
+# avatar = {{ metadata.url }}/favicon.svg
+# description = {{ metadata.description }}
+{% for post in collections.posts | reverse %}{{ post.date | isoDate }}	{{ post.data.title | striptags | safe }} — {{ metadata.url }}{{ post.url }}
+{% endfor %}

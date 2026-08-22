@@ -1,0 +1,29 @@
+---
+layout: base.njk
+---
+<article class="cv-shell">
+  <header class="cv-header">
+    <div>
+      <p class="kicker">Curriculum vitae</p>
+      <h1>{{ title }}</h1>
+      <p>{{ cv.profile }}</p>
+    </div>
+    <a class="button" href="/documents/smwyatt-cv.pdf">Download PDF</a>
+  </header>
+  {% for section in cv.sections %}
+    <section class="cv-section" aria-labelledby="cv-{{ loop.index }}">
+      <h2 id="cv-{{ loop.index }}">{{ section.title }}</h2>
+      <div class="cv-list">
+        {% for entry in section.entries %}
+          <article class="cv-entry">
+            {% if entry.role %}<p class="cv-role">{{ entry.role }}</p>{% endif %}
+            <h3>{{ entry.name | safe }}</h3>
+            {% if entry.meta %}<p class="cv-meta">{{ entry.meta | safe }}</p>{% endif %}
+            {% if entry.details %}<ul>{% for detail in entry.details %}<li>{{ detail | safe }}</li>{% endfor %}</ul>{% endif %}
+            {% if entry.description %}<p>{{ entry.description }}</p>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</article>

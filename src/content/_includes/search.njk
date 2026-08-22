@@ -1,0 +1,16 @@
+{% from "icons.njk" import icon %}
+<dialog class="search-dialog" data-search-dialog aria-labelledby="search-title">
+  <div class="search-dialog__head">
+    <h2 id="search-title">Search the archive</h2>
+    <button class="icon-button" type="button" data-search-close aria-label="Close search">{{ icon("close") }}</button>
+  </div>
+  <form class="search-form" role="search" data-search-form>
+    <label for="site-search">Search by title, topic, or phrase</label>
+    <div class="search-field">
+      {{ icon("search") }}
+      <input id="site-search" name="q" type="search" autocomplete="off" placeholder="Try “teaching” or “Jezebel”">
+    </div>
+  </form>
+  <p class="search-status" data-search-status aria-live="polite">Type at least two characters.</p>
+  <ol class="search-results" data-search-results></ol>
+</dialog>

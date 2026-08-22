@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  <head>{% include "head.njk" %}</head>
+  <body>
+    {% include "header.njk" %}
+    <main id="main" data-pagefind-body>{{ content | safe }}</main>
+    {% include "footer.njk" %}
+    {% include "search.njk" %}
+  </body>
+</html>

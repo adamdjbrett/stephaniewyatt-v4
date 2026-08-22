@@ -1,0 +1,24 @@
+{% from "icons.njk" import icon %}
+<footer class="site-footer" data-pagefind-ignore>
+  <div class="site-footer__top">
+    <div>
+      <p class="footer-kicker">Continue the conversation</p>
+      <p class="footer-title">Ministry, teaching, and scholarship in thoughtful company.</p>
+    </div>
+    <a class="footer-email" href="mailto:{{ metadata.email }}">{{ metadata.email }}</a>
+  </div>
+  <div class="profile-links" aria-label="Profiles and feeds">
+    {% for profile in metadata.profiles %}
+      <a href="{{ profile.url }}" aria-label="{{ profile.label }}" title="{{ profile.label }}">
+        {{ icon(profile.icon) }}<span class="visually-hidden">{{ profile.label }}</span>
+      </a>
+    {% endfor %}
+  </div>
+  <div class="site-footer__bottom">
+    <p>© {{ metadata.copyrightYear }} {{ metadata.author.name }}. Original site content is licensed under <a rel="license" href="{{ metadata.license.url }}">{{ metadata.license.shortName }}</a>.</p>
+    <a class="license-mark" rel="license" href="{{ metadata.license.url }}">
+      <img src="{{ metadata.license.icon }}" width="88" height="31" alt="Creative Commons BY-SA 4.0">
+    </a>
+    <p><a href="/humans.txt">Humans</a> · <a href="/credits.txt">Credits</a></p>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title and title != metadata.title %}{{ title | safe }} · {% endif %}{{ metadata.title }}</title>
+<meta name="description" content="{{ description or metadata.description }}">
+<link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="license" href="{{ metadata.license.url }}">
+<link rel="alternate" type="application/atom+xml" title="Atom feed" href="{{ metadata.feeds.atom }}">
+<link rel="alternate" type="application/rss+xml" title="RSS feed" href="{{ metadata.feeds.rss }}">
+<link rel="alternate" type="application/feed+json" title="JSON feed" href="{{ metadata.feeds.json }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title or metadata.title }}">
+<meta property="og:description" content="{{ description or metadata.description }}">
+<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script src="/assets/js/site.js" defer></script>

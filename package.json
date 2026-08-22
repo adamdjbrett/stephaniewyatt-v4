@@ -1,0 +1,20 @@
+{
+  "name": "stephaniewyatt-net",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "buildawesome --serve --port=8080",
+    "build": "buildawesome && pagefind --site _site --glob '**/*.html'",
+    "check": "node --test scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-rss": "3.0.0",
+    "@awesome.me/buildawesome": "4.0.0-alpha.10",
+    "pagefind": "1.5.2",
+    "yaml": "2.9.0"
+  }
+}

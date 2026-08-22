@@ -1,0 +1,86 @@
+title: Stephanie M. Wyatt
+shortTitle: Stephanie Wyatt
+description: Stephanie M. Wyatt is an ordained Baptist minister, biblical interpreter, educator, and community builder in Nashville, Tennessee.
+url: https://stephaniewyatt.net
+language: en-US
+copyrightYear: 2026
+email: stephanie@stephaniewyatt.net
+location: Nashville, Tennessee
+author:
+  name: Stephanie M. Wyatt
+  url: https://stephaniewyatt.net/about/
+logo: /favicon.svg
+license:
+  name: Creative Commons Attribution-ShareAlike 4.0 International
+  shortName: CC BY-SA 4.0
+  url: https://creativecommons.org/licenses/by-sa/4.0/deed.en
+  icon: /assets/icons/CC_BY-SA_icon.svg
+navigation:
+  - label: About
+    url: /about/
+  - label: Writing
+    url: /blog/
+  - label: Work
+    url: /projects/
+  - label: CV
+    url: /cv/
+  - label: Contact
+    url: /contact/
+profiles:
+  - label: Email
+    url: mailto:stephanie@stephaniewyatt.net
+    icon: email
+    source: Phosphor
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/stephaniemwyatt/
+    icon: linkedin
+    source: Phosphor
+  - label: Academia.edu
+    url: https://tcu.academia.edu/StephanieWyatt
+    icon: academia
+    source: Academicons
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=43gFBr8AAAAJ
+    icon: scholar
+    source: Academicons
+  - label: ORCID
+    url: https://orcid.org/0000-0002-4472-5316
+    icon: orcid
+    source: Academicons
+  - label: Download CV
+    url: /documents/smwyatt-cv.pdf
+    icon: pdf
+    source: Phosphor
+  - label: RSS feed
+    url: /feed.rss
+    icon: rss
+    source: Phosphor
+feeds:
+  atom: /feed.xml
+  rss: /feed.rss
+  json: /feed.json
+  twtxt: /twtxt.txt
+sitemap:
+  - /
+  - /about/
+  - /blog/
+  - /contact/
+  - /copyright/
+  - /cv/
+  - /projects/
+  - /tags/
+  - /welcome/
+  - /teaching/
+  - /jezebel/
+  - /invited-sermons/
+  - /covid/
+  - /ministry/
+  - /faith-statement/
+  - /my-life-books/
+  - /wyatt_JSOT_Citation/Wyatt_JSOT_Jezebel_Elijah_and_the_Widow_of_Zarephath_microdata/
+  - /yandex_86bdfe930f70f799/
+  - /documents/SMWyatt_Teaching_Philosophy_4_9_2016.pdf
+  - /documents/Wyatt-Advent05-Manger.pdf
+  - /documents/Wyatt_Each_generation_plays_a_role_in-preserving_Baptist_heritage.pdf
+  - /documents/smwyatt-cv.pdf
+  - /documents/SMWyatt_CV_2026_rev2.pdf

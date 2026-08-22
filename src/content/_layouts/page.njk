@@ -1,0 +1,12 @@
+---
+layout: base.njk
+---
+<article class="page-shell{% if pageClass %} {{ pageClass }}{% endif %}">
+  <header class="page-header">
+    {% if kicker %}<p class="kicker">{{ kicker }}</p>{% endif %}
+    <h1>{{ title | safe }}</h1>
+    {% if description %}<p class="page-deck">{{ description }}</p>{% endif %}
+    {% if date %}<p class="post-date"><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>{% endif %}
+  </header>
+  <div class="prose">{{ content | safe }}</div>
+</article>

@@ -1,91 +1,23 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f902bf40-c9ef-4bcf-8ddd-a336fe1a99f3/deploy-status)](https://app.netlify.com/sites/thriving-heliotrope-0478d7/deploys)
+# stephaniewyatt.net
 
-## Changes to make
-### Homepage
-    - reconfigure social links to use '_data/social.yml' and have a wide array of options like this [post](https://vivekkrish.com/indigo/adding-configuring-social-links/)
-    - remove github
-    - show academia.edu
-    - show google scholar
-    - show ORCID
-### Menu
-    - show contact page
-    - increase font size and readiblity
-### Blog
-    - simplify blog allow posting without having to set category, star, author, description
-### Get Favicon to show
-### Body Font
-    - increase body font size
-    - increase body font weight
-    - increase contrast between body font and background color for light and dark modes. 
-    - increase readibility
+The source for [Stephanie M. Wyatt’s website](https://stephaniewyatt.net), built with Build Awesome and Nunjucks.
 
+## Develop
 
-<p align="center">
-    <h2 align="center">Indigo Minimalist Jekyll Template - <a href="https://sergiokopplin.github.io/indigo/">Demo</a></h2>
-</p>
+Requires Node.js 24 or newer.
 
-<p align="center">This is a simple and minimalist template for Jekyll for those who likes to eat noodles.</p>
-
-***
-
-<p align="center">
-    <b><a href="README.md#what-has-inside">What has inside</a></b>
-    |
-    <b><a href="README.md#setup">Setup</a></b>
-    |
-    <b><a href="README.md#settings">Settings</a></b>
-    |
-    <b><a href="README.md#how-to">How to</a></b>
-</p>
-
-<p align="center">
-    Light and Dark themes.
-</p>
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/sergiokopplin/indigo/gh-pages/assets/screen-shot.png" />
-</p>
-
-## What has inside
-
-- [Jekyll](https://jekyllrb.com/), [Sass](https://sass-lang.com/) ~[RSCSS](https://rscss.io/)~ and [SVG](https://www.w3.org/Graphics/SVG/);
-- Google Speed: [98/100](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fsergiokopplin.github.io%2Findigo%2F);
-- No JS. :sunglasses:
-
-## Setup
-
-0. :star: to the project. :metal:
-1. Fork the project [Indigo](https://github.com/sergiokopplin/indigo/fork)
-2. Edit `_config.yml` with your data (check <a href="README.md#settings">settings</a> section)
-3. Write some posts :bowtie:
-
-If you want to test locally on your machine, do the following steps also:
-
-1. Install [Jekyll](https://jekyllrb.com) and [Bundler](https://bundler.io/).
-2. Clone the forked repo on your machine
-3. Enter the cloned folder via terminal and run `bundle install`
-4. Then run `bundle exec jekyll serve`
-5. Open it in your browser: `http://localhost:4000`
-6. Do you want an admin panel to edit your posts? You can install this plugin [jekyll-admin](https://jekyll.github.io/jekyll-admin/).
-
-## Settings
-
-You must fill some informations on `_config.yml` to customize your site.
-
-```
-name: John Doe
-bio: 'A Man who travels the world eating noodles'
-picture: 'assets/images/profile.jpg'
-...
-
-and lot of other options, like width, projects, pages, read-time, tags, related posts, animations, multiple-authors, etc.
+```sh
+npm ci
+npm run dev
 ```
 
-## How To?
+## Build and verify
 
-Check the [FAQ](./FAQ.md) if you have any doubt or problem.
+```sh
+npm run build
+npm run check
+```
 
----
-## License
+Content and templates live in `src/content`; static assets live in `src/public`. Files in `src/content/_drafts` and files with `published: false` are excluded from all builds.
 
-[MIT](https://kopplin.mit-license.org/) License © Sérgio Kopplin
+Except where otherwise noted, original site content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Third-party assets retain their original licenses; see the generated `/credits.txt`.

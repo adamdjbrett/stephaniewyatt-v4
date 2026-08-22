@@ -1,0 +1,19 @@
+{% from "icons.njk" import icon %}
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead" data-pagefind-ignore>
+  <a class="wordmark" href="/" aria-label="{{ metadata.shortTitle }}, home">
+    {{ icon("book-open-text", "wordmark__icon") }}
+    <span>{{ metadata.shortTitle }}</span>
+  </a>
+  <nav class="primary-nav" aria-label="Primary navigation">
+    {% for item in metadata.navigation %}<a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+  </nav>
+  <div class="masthead__tools">
+    <button class="icon-button" type="button" data-search-open aria-label="Search">
+      {{ icon("search") }}
+    </button>
+    <button class="icon-button" type="button" data-theme-toggle aria-label="Switch color theme">
+      {{ icon("sun") }}
+    </button>
+  </div>
+</header>
