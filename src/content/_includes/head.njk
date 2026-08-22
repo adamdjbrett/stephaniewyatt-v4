@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="{{ metadata.generator.name }} v{{ metadata.generator.version }}">
 <title>{% if title and title != metadata.title %}{{ title | safe }} · {% endif %}{{ metadata.title }}</title>
 <meta name="description" content="{{ description or metadata.description }}">
 <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">

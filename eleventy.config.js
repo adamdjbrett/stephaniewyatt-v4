@@ -7,6 +7,7 @@ export function shouldPublish(data = {}) {
 
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
+  eleventyConfig.addGlobalData("currentYear", () => new Date().getUTCFullYear());
   eleventyConfig.addPassthroughCopy({ "src/public/": "/" });
   eleventyConfig.ignores.add("src/content/_drafts/**");
 
@@ -34,6 +35,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPlugin(feedPlugin, {
     outputPath: "/feed.xml",
+    stylesheet: "/feed.xsl",
     collection: { name: "posts", limit: 20 },
     metadata: {
       language: "en-US",

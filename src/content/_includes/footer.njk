@@ -15,7 +15,10 @@
     {% endfor %}
   </div>
   <div class="site-footer__bottom">
-    <p>© {{ metadata.copyrightYear }} {{ metadata.author.name }}. Original site content is licensed under <a rel="license" href="{{ metadata.license.url }}">{{ metadata.license.shortName }}</a>.</p>
+    <div>
+      <p>© {{ currentYear }} {{ metadata.author.name }}. This site is licensed under <a rel="license" href="{{ metadata.license.url }}">{{ metadata.license.shortName }}</a>.</p>
+      <p>Built with 💜 by <a href="https://adamdjbrett.com">Adam DJ Brett</a> using <a href="https://build.awesome.me">Build.Awesome</a>.</p>
+    </div>
     <a class="license-mark" rel="license" href="{{ metadata.license.url }}">
       <img src="{{ metadata.license.icon }}" width="88" height="31" alt="Creative Commons BY-SA 4.0">
     </a>

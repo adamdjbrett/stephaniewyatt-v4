@@ -3,7 +3,9 @@ shortTitle: Stephanie Wyatt
 description: Stephanie M. Wyatt is an ordained Baptist minister, biblical interpreter, educator, and community builder in Nashville, Tennessee.
 url: https://stephaniewyatt.net
 language: en-US
-copyrightYear: 2026
+generator:
+  name: Build Awesome
+  version: 4.0.0-alpha.10
 email: stephanie@stephaniewyatt.net
 location: Nashville, Tennessee
 author:
@@ -49,8 +51,8 @@ profiles:
     source: Academicons
   - label: Download CV
     url: /documents/smwyatt-cv.pdf
-    icon: pdf
-    source: Phosphor
+    icon: cv
+    source: Academicons
   - label: RSS feed
     url: /feed.rss
     icon: rss
