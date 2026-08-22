@@ -1,12 +1,12 @@
 ---
 layout: base.njk
 ---
-<article class="page-shell{% if pageClass %} {{ pageClass }}{% endif %}">
+<article class="page-shell{% if pageClass %} {{ pageClass }}{% endif %}{% if contentType == 'blogPost' %} h-entry{% endif %}">
   <header class="page-header">
     {% if kicker %}<p class="kicker">{{ kicker }}</p>{% endif %}
-    <h1>{{ title | safe }}</h1>
-    {% if description %}<p class="page-deck">{{ description }}</p>{% endif %}
-    {% if date %}<p class="post-date"><time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time></p>{% endif %}
+    <h1>{% if contentType == "blogPost" %}<a class="p-name u-url" rel="bookmark" href="{{ page.url }}">{{ title | safe }}</a>{% else %}{{ title | safe }}{% endif %}</h1>
+    {% if description %}<p class="page-deck{% if contentType == 'blogPost' %} p-summary{% endif %}">{{ description }}</p>{% endif %}
+    {% if date %}<p class="post-date">{% if contentType == "blogPost" %}By <a class="p-author h-card p-name u-url" rel="author" href="{{ metadata.author.url }}">{{ metadata.author.name }}</a> · {% endif %}<time{% if contentType == "blogPost" %} class="dt-published"{% endif %} datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>{% if last_modified_at %} · Updated <time class="dt-updated" datetime="{{ last_modified_at | isoDate }}">{{ last_modified_at | readableDate }}</time>{% endif %}{% if contentType == "blogPost" and tags %} · {% for tag in tags %}<span class="p-category">{{ tag }}</span>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}</p>{% endif %}
   </header>
-  <div class="prose">{{ content | safe }}</div>
+  <div class="prose{% if contentType == 'blogPost' %} e-content{% endif %}">{{ content | safe }}</div>
 </article>

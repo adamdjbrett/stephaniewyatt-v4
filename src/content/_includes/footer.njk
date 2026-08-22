@@ -1,22 +1,22 @@
 {% from "icons.njk" import icon %}
-<footer class="site-footer" data-pagefind-ignore>
+<footer class="site-footer h-card" data-pagefind-ignore>
   <div class="site-footer__top">
     <div>
       <p class="footer-kicker">Continue the conversation</p>
       <p class="footer-title">Ministry, teaching, and scholarship in thoughtful company.</p>
     </div>
-    <a class="footer-email" href="mailto:{{ metadata.email }}">{{ metadata.email }}</a>
+    <a class="footer-email u-email" href="mailto:{{ metadata.email }}">{{ metadata.email }}</a>
   </div>
   <div class="profile-links" aria-label="Profiles and feeds">
     {% for profile in metadata.profiles %}
-      <a href="{{ profile.url }}" aria-label="{{ profile.label }}" title="{{ profile.label }}">
+      <a{% if profile.identity %} class="u-url" rel="me"{% endif %} href="{{ profile.url }}" aria-label="{{ profile.label }}" title="{{ profile.label }}">
         {{ icon(profile.icon) }}<span class="visually-hidden">{{ profile.label }}</span>
       </a>
     {% endfor %}
   </div>
   <div class="site-footer__bottom">
     <div>
-      <p>© {{ currentYear }} {{ metadata.author.name }}. This site is licensed under <a rel="license" href="{{ metadata.license.url }}">{{ metadata.license.shortName }}</a>.</p>
+      <p>© {{ currentYear }} <a class="p-name u-url" href="{{ metadata.url }}/">{{ metadata.author.name }}</a>. This site is licensed under <a rel="license" href="{{ metadata.license.url }}">{{ metadata.license.shortName }}</a>.</p>
       <p>Built with 💜 by <a href="https://adamdjbrett.com">Adam DJ Brett</a> using <a href="https://build.awesome.me">Build.Awesome</a>.</p>
     </div>
     <a class="license-mark" rel="license" href="{{ metadata.license.url }}">

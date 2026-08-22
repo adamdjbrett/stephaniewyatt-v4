@@ -18,7 +18,7 @@
         <main>
           <xsl:for-each select="a:feed/a:entry">
             <article>
-              <h2><a href="{a:link[@rel='alternate']/@href}"><xsl:value-of select="a:title"/></a></h2>
+              <h2><a href="{a:link[not(@rel) or @rel='alternate'][1]/@href}"><xsl:value-of select="a:title"/></a></h2>
               <small><xsl:value-of select="substring(a:updated, 1, 10)"/></small>
               <div><xsl:value-of select="a:content" disable-output-escaping="yes"/></div>
             </article>

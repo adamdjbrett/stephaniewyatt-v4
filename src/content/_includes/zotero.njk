@@ -1,0 +1,19 @@
+{% if contentType == "blogPost" %}
+<meta property="zotero:itemType" content="blogPost">
+<meta name="DC.type" content="blogPost">
+<meta name="DC.title" content="{{ title | escape }}">
+<meta name="DC.creator" content="{{ metadata.author.name }}">
+<meta name="DC.date" content="{{ date | isoDate }}">
+<meta name="DC.identifier" content="{{ metadata.url }}{{ page.url }}">
+<meta name="DC.language" content="{{ metadata.language }}">
+{% if description %}<meta name="DC.description" content="{{ description | escape }}">{% endif %}
+<meta name="DC.rights" content="{{ metadata.license.shortName }}">
+<meta name="citation_title" content="{{ title | escape }}">
+<meta name="citation_author" content="Wyatt, Stephanie">
+<meta name="citation_publication_date" content="{{ date | isoDate }}">
+<meta name="citation_public_url" content="{{ metadata.url }}{{ page.url }}">
+<meta name="citation_language" content="{{ metadata.language }}">
+{% if tags %}<meta name="citation_keywords" content="{{ tags | join('; ') }}">{% endif %}
+<meta name="prism.genre" content="blogentry">
+<meta name="prism.publicationName" content="{{ metadata.title }}">
+{% endif %}

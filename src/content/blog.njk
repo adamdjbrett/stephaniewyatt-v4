@@ -5,12 +5,13 @@ kicker: Archive
 description: Sermons, scholarship, teaching, ministry, and personal reflection.
 permalink: /blog/
 ---
-<div class="archive-list">
+<div class="archive-list h-feed">
+<p><span class="p-name">Writing</span> by <a class="p-author h-card p-name u-url" rel="author" href="{{ metadata.author.url }}">{{ metadata.author.name }}</a></p>
 {% for post in collections.posts | reverse %}
-  <article>
-    <p><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% if post.data.tags %} · {{ post.data.tags | join(" · ") }}{% endif %}</p>
-    <h2><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
-    {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+  <article class="h-entry">
+    <p><time class="dt-published" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>{% if post.data.tags %} · {% for tag in post.data.tags %}<span class="p-category">{{ tag }}</span>{% if not loop.last %} · {% endif %}{% endfor %}{% endif %}</p>
+    <h2><a class="p-name u-url" href="{{ post.url }}">{{ post.data.title | safe }}</a></h2>
+    {% if post.data.description %}<p class="p-summary">{{ post.data.description }}</p>{% endif %}
   </article>
 {% endfor %}
 </div>

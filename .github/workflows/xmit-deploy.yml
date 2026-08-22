@@ -50,6 +50,7 @@ jobs:
           test -f _site/feed.json
           test -f _site/twtxt.txt
           test -f _site/pagefind/pagefind.js
+          test -f _site/images/copyright_Clem10_MG_4496cw_stephanie_bg.jpg
 
       - name: Deploy to XMIT
         if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'

@@ -18,6 +18,7 @@ const baseline = [
   "/documents/Wyatt_Each_generation_plays_a_role_in-preserving_Baptist_heritage.pdf",
   "/documents/smwyatt-cv.pdf"
 ];
+const postRoutes = ["/welcome/", "/teaching/", "/jezebel/", "/invited-sermons/", "/covid/", "/ministry/", "/faith-statement/", "/my-life-books/"];
 
 function outputPath(urlPath) {
   const clean = decodeURIComponent(urlPath.split(/[?#]/)[0]);
@@ -71,6 +72,7 @@ test("all internal HTML links and assets resolve with exact case", () => {
     }
   }
   assert.ok(existsSync(join(output, "pagefind/pagefind.js")), "Pagefind module missing");
+  assert.ok(existsSync(join(output, "images/copyright_Clem10_MG_4496cw_stephanie_bg.jpg")), "Clem Webb portrait missing");
 });
 
 test("feeds and sitemap use the canonical host", () => {
@@ -88,6 +90,7 @@ test("feeds and sitemap use the canonical host", () => {
   assert.match(atom, /<feed[^>]+xmlns="http:\/\/www\.w3\.org\/2005\/Atom"/);
   assert.match(atom, /<\?xml-stylesheet href="\/feed\.xsl" type="text\/xsl"\?>/);
   assert.ok(existsSync(join(output, "feed.xsl")), "Atom feed stylesheet missing");
+  for (const [, url] of atom.matchAll(/<link href="(https:\/\/stephaniewyatt\.net[^" ]*)"/g)) assert.ok(existsSync(outputPath(new URL(url).pathname)), `feed link missing: ${url}`);
   assert.match(atom, /<entry>/);
   assert.match(rss, /<rss version="2\.0">/);
   assert.match(rss, /<item>/);
@@ -149,4 +152,48 @@ test("light and dark color roles meet WCAG AA contrast", () => {
     assert.ok(contrast(mix(colors["anchor-ink"], colors.anchor, 0.82), colors.anchor) >= 4.5, `${theme}: translucent hero text`);
     assert.ok(contrast(mix(colors["anchor-ink"], colors.anchor, 0.5), colors.anchor) >= 3, `${theme}: profile link border`);
   }
+});
+
+test("microformats and Zotero metadata identify posts", () => {
+  const home = readFileSync(join(output, "index.html"), "utf8");
+  const blog = readFileSync(join(output, "blog/index.html"), "utf8");
+  assert.match(home, /class="site-footer h-card"/);
+  for (const token of ["p-name u-url", "u-email", 'rel="me"']) assert.ok(home.includes(token), `missing ${token}`);
+  assert.match(blog, /class="archive-list h-feed"/);
+  assert.equal((blog.match(/<article class="h-entry">/g) || []).length, 8);
+  for (const route of postRoutes) {
+    const post = readFileSync(outputPath(route), "utf8");
+    for (const token of ["h-entry", "p-name u-url", "dt-published", "e-content", "p-author h-card"]) assert.ok(post.includes(token), `${route} missing ${token}`);
+    for (const token of ['content="blogPost"', 'name="DC.title"', 'name="DC.creator"', 'name="citation_title"', 'name="citation_public_url"', 'name="prism.genre"']) {
+      assert.ok(post.includes(token), `${route} missing Zotero field ${token}`);
+    }
+    assert.ok(!post.includes('<link class="u-url"'), `${route} has invalid body link metadata`);
+  }
+  assert.ok(!readFileSync(join(output, "about/index.html"), "utf8").includes('content="blogPost"'));
+});
+
+test("JSON-LD graph, feed presentation, and humans are valid", () => {
+  for (const file of walk(output).filter((path) => path.endsWith(".html"))) {
+    const html = readFileSync(file, "utf8");
+    for (const [, json] of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      const graph = JSON.parse(json)["@graph"];
+      for (const type of ["Person", "WebSite", "Blog"]) assert.ok(graph.some((node) => node["@type"] === type), `${file} missing ${type}`);
+    }
+  }
+  const post = readFileSync(join(output, "my-life-books/index.html"), "utf8");
+  const graph = JSON.parse(post.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])["@graph"];
+  assert.ok(graph.some((node) => node["@type"] === "BlogPosting"));
+  const person = graph.find((node) => node["@type"] === "Person");
+  const thesis = graph.find((node) => node["@type"] === "Thesis");
+  const article = graph.find((node) => node["@type"] === "ScholarlyArticle");
+  assert.equal(thesis.name, "Widows in the Memories of Biblical Israel");
+  assert.equal(thesis.author["@id"], person["@id"]);
+  assert.equal(article.sameAs, "https://doi.org/10.1177/0309089212438020");
+  assert.equal(article.author["@id"], person["@id"]);
+  assert.deepEqual(person["@reverse"].author.map((work) => work["@id"]), [thesis["@id"], article["@id"]]);
+  const css = readFileSync(join(output, "feed.xsl"), "utf8").match(/<style>([^<]+)<\/style>/)[1];
+  assert.ok(Buffer.byteLength(css) < 300, `feed CSS is ${Buffer.byteLength(css)} bytes`);
+  for (const token of ["system-ui", "color:#000", "background:#fff", "border-top:3px solid"]) assert.ok(css.includes(token), `feed CSS missing ${token}`);
+  const humans = readFileSync(join(output, "humans.txt"), "utf8");
+  for (const token of ["/* TEAM */", "Stephanie Wyatt:", "Adam DJ Brett:"]) assert.ok(humans.includes(token), `humans.txt missing ${token}`);
 });

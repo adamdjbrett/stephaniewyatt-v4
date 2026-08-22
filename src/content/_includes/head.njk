@@ -13,5 +13,8 @@
 <meta property="og:title" content="{{ title or metadata.title }}">
 <meta property="og:description" content="{{ description or metadata.description }}">
 <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+<link rel="author" href="{{ metadata.author.url }}">
+{% include "zotero.njk" %}
+{% include "schema.njk" %}
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/site.js" defer></script>

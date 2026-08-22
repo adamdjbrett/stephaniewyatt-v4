@@ -11,6 +11,154 @@ location: Nashville, Tennessee
 author:
   name: Stephanie M. Wyatt
   url: https://stephaniewyatt.net/about/
+person:
+  "@type": Person
+  "@id": https://stephaniewyatt.net/#person
+  name: Stephanie M. Wyatt
+  givenName: Stephanie
+  additionalName: M.
+  familyName: Wyatt
+  url: https://stephaniewyatt.net/
+  mainEntityOfPage: https://stephaniewyatt.net/about/
+  image: https://stephaniewyatt.net/images/stephanie-wyatt-sq-copyright-clem_t_webb.png
+  email: mailto:stephanie@stephaniewyatt.net
+  description: Stephanie M. Wyatt is an ordained Baptist minister, biblical interpreter, educator, and community builder in Nashville, Tennessee.
+  jobTitle:
+    - Associate Pastor
+    - Program Specialist
+    - Biblical Interpreter
+    - Educator
+  identifier:
+    - "@type": PropertyValue
+      propertyID: ORCID
+      value: 0000-0002-4472-5316
+      url: https://orcid.org/0000-0002-4472-5316
+  worksFor:
+    "@type": Organization
+    name: Immanuel Baptist Church
+  affiliation:
+    - "@type": Organization
+      name: Immanuel Baptist Church
+    - "@type": CollegeOrUniversity
+      name: Syracuse University
+  alumniOf:
+    - "@type": CollegeOrUniversity
+      name: Brite Divinity School at Texas Christian University
+    - "@type": CollegeOrUniversity
+      name: Texas Christian University
+    - "@type": CollegeOrUniversity
+      name: Vanderbilt University
+    - "@type": CollegeOrUniversity
+      name: Wake Forest University School of Divinity
+    - "@type": CollegeOrUniversity
+      name: University of Tennessee, Knoxville
+  hasCredential:
+    - "@type": EducationalOccupationalCredential
+      name: Graduate Certificate in Women’s Studies
+    - "@type": EducationalOccupationalCredential
+      name: Master of Arts in Religion
+    - "@type": EducationalOccupationalCredential
+      name: Master of Divinity
+    - "@type": EducationalOccupationalCredential
+      name: Bachelor of Arts in College Scholars
+  knowsAbout:
+    - Biblical interpretation
+    - Hebrew Bible
+    - Biblical theology
+    - Feminist hermeneutics
+    - Jewish studies
+    - Theological education
+    - Christian education
+    - Baptist ministry
+    - Preaching
+    - Religious liberty
+    - Church–state separation
+  sameAs:
+    - https://www.linkedin.com/in/stephaniemwyatt/
+    - https://tcu.academia.edu/StephanieWyatt
+    - https://scholar.google.com/citations?user=43gFBr8AAAAJ
+    - https://orcid.org/0000-0002-4472-5316
+  subjectOf:
+    "@type": CreativeWork
+    name: Curriculum vitae
+    url: https://stephaniewyatt.net/cv/
+    encoding:
+      "@type": MediaObject
+      contentUrl: https://stephaniewyatt.net/documents/SMWyatt_CV_2026_rev2.pdf
+      encodingFormat: application/pdf
+  "@reverse":
+    author:
+      - "@id": https://stephaniewyatt.net/#dissertation
+      - "@id": https://stephaniewyatt.net/jezebel/#article
+website:
+  "@type": WebSite
+  "@id": https://stephaniewyatt.net/#website
+  url: https://stephaniewyatt.net/
+  name: Stephanie M. Wyatt
+  description: Ministry, biblical interpretation, teaching, and scholarship by Stephanie M. Wyatt.
+  inLanguage: en-US
+  author:
+    "@id": https://stephaniewyatt.net/#person
+  publisher:
+    "@id": https://stephaniewyatt.net/#person
+  license: https://creativecommons.org/licenses/by-sa/4.0/
+blog:
+  "@type": Blog
+  "@id": https://stephaniewyatt.net/blog/#blog
+  url: https://stephaniewyatt.net/blog/
+  name: Stephanie M. Wyatt — Writing
+  description: Sermons, scholarship, teaching, ministry, and personal reflection.
+  inLanguage: en-US
+  author:
+    "@id": https://stephaniewyatt.net/#person
+  publisher:
+    "@id": https://stephaniewyatt.net/#person
+  isPartOf:
+    "@id": https://stephaniewyatt.net/#website
+  license: https://creativecommons.org/licenses/by-sa/4.0/
+publications:
+  - "@type": Thesis
+    "@id": https://stephaniewyatt.net/#dissertation
+    name: Widows in the Memories of Biblical Israel
+    author:
+      "@id": https://stephaniewyatt.net/#person
+    creativeWorkStatus: Dissertation project
+    inSupportOf: Ph.D. candidacy in Biblical Interpretation
+    sourceOrganization:
+      "@type": CollegeOrUniversity
+      name: Brite Divinity School at Texas Christian University
+    about:
+      - Widows
+      - Hebrew Bible
+      - Biblical theology
+      - Feminist hermeneutics
+  - "@type": ScholarlyArticle
+    "@id": https://stephaniewyatt.net/jezebel/#article
+    name: "Jezebel, Elijah, and the Widow of Zarephath: A Ménage à Trois Who Estrange the Holy and Make Holy the Strange"
+    url: https://stephaniewyatt.net/jezebel/
+    sameAs: https://doi.org/10.1177/0309089212438020
+    author:
+      "@id": https://stephaniewyatt.net/#person
+    datePublished: 2012-06
+    pageStart: "435"
+    pageEnd: "458"
+    keywords:
+      - Widows
+      - Hebrew Bible
+      - Old Testament
+      - Feminist Biblical Interpretation
+    isPartOf:
+      "@type": PublicationIssue
+      issueNumber: "4"
+      isPartOf:
+        "@type": PublicationVolume
+        volumeNumber: "36"
+        isPartOf:
+          "@type": Periodical
+          name: Journal for the Study of the Old Testament
+          issn:
+            - 0309-0892
+            - 1476-6728
 logo: /favicon.svg
 license:
   name: Creative Commons Attribution-ShareAlike 4.0 International
@@ -37,24 +185,28 @@ profiles:
     url: https://www.linkedin.com/in/stephaniemwyatt/
     icon: linkedin
     source: Phosphor
+    identity: true
   - label: Academia.edu
     url: https://tcu.academia.edu/StephanieWyatt
     icon: academia
     source: Academicons
+    identity: true
   - label: Google Scholar
     url: https://scholar.google.com/citations?user=43gFBr8AAAAJ
     icon: scholar
     source: Academicons
+    identity: true
   - label: ORCID
     url: https://orcid.org/0000-0002-4472-5316
     icon: orcid
     source: Academicons
+    identity: true
   - label: Download CV
     url: /documents/smwyatt-cv.pdf
     icon: cv
     source: Academicons
   - label: RSS feed
-    url: /feed.rss
+    url: /feed.xml
     icon: rss
     source: Phosphor
 feeds:

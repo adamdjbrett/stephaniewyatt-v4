@@ -56,10 +56,10 @@ permalink: /
   </div>
   <div class="post-grid">
     {% for post in collections.posts | reverse %}{% if loop.index <= 3 %}
-      <article>
-        <p><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
-        <h3><a href="{{ post.url }}">{{ post.data.title | safe }}</a></h3>
-        {% if post.data.tags %}<p class="tags">{{ post.data.tags | join(" · ") }}</p>{% endif %}
+      <article class="h-entry">
+        <p><time class="dt-published" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
+        <h3><a class="p-name u-url" href="{{ post.url }}">{{ post.data.title | safe }}</a></h3>
+        {% if post.data.tags %}<p class="tags">{% for tag in post.data.tags %}<span class="p-category">{{ tag }}</span>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
       </article>
     {% endif %}{% endfor %}
   </div>
