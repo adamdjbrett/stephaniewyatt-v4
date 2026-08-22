@@ -44,15 +44,13 @@ person:
       name: Syracuse University
   alumniOf:
     - "@type": CollegeOrUniversity
-      name: Brite Divinity School at Texas Christian University
+      name: Brite Divinity School
     - "@type": CollegeOrUniversity
       name: Texas Christian University
     - "@type": CollegeOrUniversity
-      name: Vanderbilt University
+      name: Wake Forest Divinity School
     - "@type": CollegeOrUniversity
-      name: Wake Forest University School of Divinity
-    - "@type": CollegeOrUniversity
-      name: University of Tennessee, Knoxville
+      name: University of Tennessee
   hasCredential:
     - "@type": EducationalOccupationalCredential
       name: Doctor of Philosophy in Biblical Interpretation
