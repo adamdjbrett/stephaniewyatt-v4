@@ -1,0 +1,4 @@
+[[redirects]]
+from = "^/documents/SMWyatt_CV_2026_rev2\\.pdf$"
+to = "/documents/smwyatt-cv.pdf"
+permanent = true

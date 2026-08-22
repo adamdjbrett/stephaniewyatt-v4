@@ -89,7 +89,7 @@ person:
     url: https://stephaniewyatt.net/cv/
     encoding:
       "@type": MediaObject
-      contentUrl: https://stephaniewyatt.net/documents/SMWyatt_CV_2026_rev2.pdf
+      contentUrl: https://stephaniewyatt.net/documents/smwyatt-cv.pdf
       encodingFormat: application/pdf
   "@reverse":
     author:
@@ -245,4 +245,3 @@ sitemap:
   - /documents/Wyatt-Advent05-Manger.pdf
   - /documents/Wyatt_Each_generation_plays_a_role_in-preserving_Baptist_heritage.pdf
   - /documents/smwyatt-cv.pdf
-  - /documents/SMWyatt_CV_2026_rev2.pdf

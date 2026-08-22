@@ -61,6 +61,10 @@ function colorTokens(selector) {
 
 test("live sitemap routes remain available", () => {
   for (const route of baseline) assert.ok(existsSync(outputPath(route)), `missing ${route}`);
+  const redirects = readFileSync(join(output, "xmit.toml"), "utf8");
+  assert.match(redirects, /SMWyatt_CV_2026_rev2\\\\\.pdf/);
+  assert.match(redirects, /to = "\/documents\/smwyatt-cv\.pdf"/);
+  assert.match(redirects, /permanent = true/);
 });
 
 test("all internal HTML links and assets resolve with exact case", () => {
@@ -115,10 +119,7 @@ test("draft and privacy rules are enforced", () => {
   assert.doesNotMatch(html, /219 Pebble Brook|\(865\)\s*406/);
   assert.match(readFileSync(join(output, "cv/index.html"), "utf8"), /Ph\.D\., Biblical Interpretation · May 2016/);
   assert.doesNotMatch(readFileSync(join(output, "documents/stephaniewyatt.tel.vcf"), "utf8"), /TEL|ADR|GEO/);
-  assert.deepEqual(
-    readFileSync(join(output, "documents/SMWyatt_CV_2026_rev2.pdf")),
-    readFileSync(join(output, "documents/smwyatt-cv.pdf"))
-  );
+  assert.ok(existsSync(join(output, "documents/smwyatt-cv.pdf")));
 });
 
 test("search index and licenses are present", () => {
