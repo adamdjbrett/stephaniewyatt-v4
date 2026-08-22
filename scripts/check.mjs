@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
+import YAML from "yaml";
 import { shouldPublish } from "../eleventy.config.js";
 
 const output = new URL("../_site/", import.meta.url).pathname;
@@ -72,7 +73,7 @@ test("all internal HTML links and assets resolve with exact case", () => {
     }
   }
   assert.ok(existsSync(join(output, "pagefind/pagefind.js")), "Pagefind module missing");
-  assert.ok(existsSync(join(output, "images/copyright_Clem10_MG_4496cw_stephanie_bg.jpg")), "Clem Webb portrait missing");
+  assert.ok(existsSync(join(output, "images/copyright_Clem10_MG_4496cw_stephanie_bg.webp")), "Clem Webb portrait missing");
 });
 
 test("feeds and sitemap use the canonical host", () => {
@@ -111,8 +112,8 @@ test("draft and privacy rules are enforced", () => {
     .filter((path) => path.endsWith(".html"))
     .map((path) => readFileSync(path, "utf8"))
     .join("\n");
-  assert.doesNotMatch(html, /219 Pebble Brook|\(865\)\s*406|Rev\.?\s+Dr\.?|earned (?:her )?Ph\.D/i);
-  assert.match(readFileSync(join(output, "cv/index.html"), "utf8"), /Ph\.D\. Candidate, Biblical Interpretation · August 2005–May 2016/);
+  assert.doesNotMatch(html, /219 Pebble Brook|\(865\)\s*406/);
+  assert.match(readFileSync(join(output, "cv/index.html"), "utf8"), /Ph\.D\., Biblical Interpretation · May 2016/);
   assert.doesNotMatch(readFileSync(join(output, "documents/stephaniewyatt.tel.vcf"), "utf8"), /TEL|ADR|GEO/);
   assert.deepEqual(
     readFileSync(join(output, "documents/SMWyatt_CV_2026_rev2.pdf")),
@@ -187,7 +188,9 @@ test("JSON-LD graph, feed presentation, and humans are valid", () => {
   const thesis = graph.find((node) => node["@type"] === "Thesis");
   const article = graph.find((node) => node["@type"] === "ScholarlyArticle");
   assert.equal(thesis.name, "Widows in the Memories of Biblical Israel");
+  assert.equal(thesis.creativeWorkStatus, "Completed");
   assert.equal(thesis.author["@id"], person["@id"]);
+  assert.ok(person.hasCredential.some((credential) => credential.name === "Doctor of Philosophy in Biblical Interpretation"));
   assert.equal(article.sameAs, "https://doi.org/10.1177/0309089212438020");
   assert.equal(article.author["@id"], person["@id"]);
   assert.deepEqual(person["@reverse"].author.map((work) => work["@id"]), [thesis["@id"], article["@id"]]);
@@ -196,4 +199,22 @@ test("JSON-LD graph, feed presentation, and humans are valid", () => {
   for (const token of ["system-ui", "color:#000", "background:#fff", "border-top:3px solid"]) assert.ok(css.includes(token), `feed CSS missing ${token}`);
   const humans = readFileSync(join(output, "humans.txt"), "utf8");
   for (const token of ["/* TEAM */", "Stephanie Wyatt:", "Adam DJ Brett:"]) assert.ok(humans.includes(token), `humans.txt missing ${token}`);
+});
+
+test("published raster images use WebP", () => {
+  assert.deepEqual(walk(join(output, "images")).filter((path) => /\.(?:jpe?g|png)$/i.test(path)), []);
+  for (const file of walk(output).filter((path) => path.endsWith(".html"))) {
+    assert.doesNotMatch(readFileSync(file, "utf8"), /(?:src|href)=["'][^"']+\.(?:jpe?g|png)(?:[?#][^"']*)?["']/i);
+  }
+});
+
+test("Pages CMS edits posts and accepts WebP media", () => {
+  const config = YAML.parse(readFileSync(new URL("../.pages.yml", import.meta.url), "utf8"));
+  const images = config.media.find((source) => source.name === "images");
+  const posts = config.content.find((entry) => entry.name === "posts");
+  assert.equal(images.input, "src/public/images");
+  assert.deepEqual(images.extensions, ["webp", "gif", "svg"]);
+  assert.equal(posts.path, "src/content/posts");
+  assert.equal(posts.format, "yaml-frontmatter");
+  assert.equal(config.settings.commit.identity, "user");
 });

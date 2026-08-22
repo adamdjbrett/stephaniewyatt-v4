@@ -2,7 +2,7 @@
 title: "Pastoral note on COVID-19"
 date: 2020-03-18T15:04:24+00:00
 layout: page.njk
-image: /images/splash/solidarity-4924028_1920.jpg
+image: /images/splash/solidarity-4924028_1920.webp
 permalink: /covid/
 tags:
   - pastor

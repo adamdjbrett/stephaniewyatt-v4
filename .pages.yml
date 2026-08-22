@@ -1,0 +1,74 @@
+media:
+  - name: images
+    label: Images
+    input: src/public/images
+    output: /images
+    extensions: [webp, gif, svg]
+    rename: safe
+  - name: documents
+    label: Documents
+    input: src/public/documents
+    output: /documents
+    extensions: [pdf, vcf]
+    rename: safe
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    format: yaml-frontmatter
+    exclude: [posts.json]
+    filename:
+      template: "{year}-{month}-{day}-{title}.md"
+      field: create
+    view:
+      fields: [title, date, published]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: date
+        type: date
+        required: true
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ssxxx
+      - name: last_modified_at
+        label: Last modified
+        type: date
+        default: ""
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ssxxx
+      - name: layout
+        type: string
+        default: page.njk
+        hidden: true
+      - name: permalink
+        type: string
+        required: true
+      - name: description
+        type: text
+      - name: image
+        type: image
+        options:
+          media: images
+          extensions: [webp]
+      - name: tags
+        type: string
+        list: true
+      - name: published
+        type: boolean
+        default: true
+      - name: body
+        type: rich-text
+
+settings:
+  commit:
+    identity: user

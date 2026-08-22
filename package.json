@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "buildawesome --serve --port=8080",
-    "build": "buildawesome && pagefind --site _site --glob '**/*.html'",
+    "clean": "node -e \"require('node:fs').rmSync('_site',{recursive:true,force:true})\"",
+    "dev": "npm run clean && buildawesome --serve --port=8080",
+    "build": "npm run clean && buildawesome && pagefind --site _site --glob '**/*.html'",
     "check": "node --test scripts/check.mjs"
   },
   "engines": {

@@ -10,7 +10,7 @@ cv:
     - title: Education
       entries:
         - name: Brite Divinity School at Texas Christian University
-          meta: Ph.D. Candidate, Biblical Interpretation · August 2005–May 2016
+          meta: Ph.D., Biblical Interpretation · May 2016
           details:
             - "Dissertation: <em>Widows in the Memories of Biblical Israel</em>"
             - "Major concentration: Hebrew Bible"

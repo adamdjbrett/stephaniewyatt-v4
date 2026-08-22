@@ -20,7 +20,8 @@ person:
   familyName: Wyatt
   url: https://stephaniewyatt.net/
   mainEntityOfPage: https://stephaniewyatt.net/about/
-  image: https://stephaniewyatt.net/images/stephanie-wyatt-sq-copyright-clem_t_webb.png
+  image: https://stephaniewyatt.net/images/stephanie-wyatt-sq-copyright-clem_t_webb.webp
+  honorificPrefix: Rev. Dr.
   email: mailto:stephanie@stephaniewyatt.net
   description: Stephanie M. Wyatt is an ordained Baptist minister, biblical interpreter, educator, and community builder in Nashville, Tennessee.
   jobTitle:
@@ -53,6 +54,12 @@ person:
     - "@type": CollegeOrUniversity
       name: University of Tennessee, Knoxville
   hasCredential:
+    - "@type": EducationalOccupationalCredential
+      name: Doctor of Philosophy in Biblical Interpretation
+      credentialCategory: degree
+      recognizedBy:
+        "@type": CollegeOrUniversity
+        name: Brite Divinity School at Texas Christian University
     - "@type": EducationalOccupationalCredential
       name: Graduate Certificate in Women’s Studies
     - "@type": EducationalOccupationalCredential
@@ -122,8 +129,9 @@ publications:
     name: Widows in the Memories of Biblical Israel
     author:
       "@id": https://stephaniewyatt.net/#person
-    creativeWorkStatus: Dissertation project
-    inSupportOf: Ph.D. candidacy in Biblical Interpretation
+    creativeWorkStatus: Completed
+    dateCreated: 2016-05
+    inSupportOf: Doctor of Philosophy in Biblical Interpretation
     sourceOrganization:
       "@type": CollegeOrUniversity
       name: Brite Divinity School at Texas Christian University
