@@ -6,3 +6,8 @@ permanent = true
 [[headers]]
 name = "Content-Security-Policy"
 value = "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com"
+
+[[headers]]
+name = "Content-Type"
+value = "application/manifest+json"
+on = "^/site\\.webmanifest$"
