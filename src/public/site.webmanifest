@@ -1,0 +1,23 @@
+{
+  "name": "Stephanie M. Wyatt",
+  "short_name": "Stephanie Wyatt",
+  "description": "Ministry, biblical interpretation, teaching, and scholarship by Stephanie M. Wyatt.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f2e9",
+  "theme_color": "#2e0f7a",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

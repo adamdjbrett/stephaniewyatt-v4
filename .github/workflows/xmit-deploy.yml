@@ -49,6 +49,11 @@ jobs:
           test -f _site/feed.rss
           test -f _site/feed.json
           test -f _site/twtxt.txt
+          test -f _site/favicon.ico
+          test -f _site/favicon.svg
+          test -f _site/favicon-96x96.png
+          test -f _site/apple-touch-icon.png
+          test -f _site/site.webmanifest
           test -f _site/pagefind/pagefind.js
           test -f _site/images/copyright_Clem10_MG_4496cw_stephanie_bg.webp
 

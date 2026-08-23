@@ -1,10 +1,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="{{ metadata.generator.name }} v{{ metadata.generator.version }}">
+<meta name="application-name" content="{{ metadata.shortTitle }}">
+<meta name="apple-mobile-web-app-title" content="{{ metadata.shortTitle }}">
+<meta name="theme-color" content="#2e0f7a">
 <title>{% if title and title != metadata.title %}{{ title | safe }} · {% endif %}{{ metadata.title }}</title>
 <meta name="description" content="{{ description or metadata.description }}">
 <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96x96.png" sizes="96x96" type="image/png">
+<link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="license" href="{{ metadata.license.url }}">
 <link rel="alternate" type="application/atom+xml" title="Atom feed" href="{{ metadata.feeds.atom }}">
 <link rel="alternate" type="application/rss+xml" title="RSS feed" href="{{ metadata.feeds.rss }}">
