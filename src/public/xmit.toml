@@ -2,3 +2,7 @@
 from = "^/documents/SMWyatt_CV_2026_rev2\\.pdf$"
 to = "/documents/smwyatt-cv.pdf"
 permanent = true
+
+[[headers]]
+name = "Content-Security-Policy"
+value = "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com"
