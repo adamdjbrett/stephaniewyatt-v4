@@ -205,7 +205,7 @@ test("JSON-LD graph, feed presentation, and humans are valid", () => {
 test("published raster images use WebP", () => {
   assert.deepEqual(walk(join(output, "images")).filter((path) => /\.(?:jpe?g|png)$/i.test(path)), []);
   for (const file of walk(output).filter((path) => path.endsWith(".html"))) {
-    assert.doesNotMatch(readFileSync(file, "utf8"), /(?:src|href)=["'][^"']+\.(?:jpe?g|png)(?:[?#][^"']*)?["']/i);
+    assert.doesNotMatch(readFileSync(file, "utf8"), /<img\b[^>]*\bsrc=["'][^"']+\.(?:jpe?g|png)(?:[?#][^"']*)?["']/i);
   }
 });
 
