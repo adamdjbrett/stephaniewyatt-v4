@@ -11,3 +11,8 @@ value = "script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com
 name = "Content-Type"
 value = "application/manifest+json"
 on = "^/site\\.webmanifest$"
+
+[[headers]]
+name = "Cache-Control"
+value = "public, max-age=31536000"
+on = "\\.(?:css|js|webp|gif|svg|png|ico|pdf|woff2?)$"

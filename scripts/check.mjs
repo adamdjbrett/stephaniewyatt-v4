@@ -192,6 +192,7 @@ test("JSON-LD graph, feed presentation, and humans are valid", () => {
   assert.equal(thesis.creativeWorkStatus, "Completed");
   assert.equal(thesis.author["@id"], person["@id"]);
   assert.ok(person.hasCredential.some((credential) => credential.name === "Doctor of Philosophy in Biblical Interpretation"));
+  assert.deepEqual(person.alumniOf.map((school) => school.name), ["Brite Divinity School", "Texas Christian University", "Wake Forest Divinity School", "University of Tennessee"]);
   assert.equal(article.sameAs, "https://doi.org/10.1177/0309089212438020");
   assert.equal(article.author["@id"], person["@id"]);
   assert.deepEqual(person["@reverse"].author.map((work) => work["@id"]), [thesis["@id"], article["@id"]]);

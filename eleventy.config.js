@@ -1,4 +1,5 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import { readFileSync } from "node:fs";
 import YAML from "yaml";
 
 export function shouldPublish(data = {}) {
@@ -8,6 +9,7 @@ export function shouldPublish(data = {}) {
 export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
   eleventyConfig.addGlobalData("currentYear", () => new Date().getUTCFullYear());
+  eleventyConfig.addGlobalData("siteCss", () => readFileSync("src/public/assets/css/site.css", "utf8"));
   eleventyConfig.addPassthroughCopy({ "src/public/": "/" });
   eleventyConfig.ignores.add("src/content/_drafts/**");
 
