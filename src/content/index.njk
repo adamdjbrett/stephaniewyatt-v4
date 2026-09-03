@@ -1,61 +1,73 @@
 ---
 layout: home.njk
-title: Stephanie M. Wyatt
-description: Ordained Baptist minister, biblical interpreter, educator, and community builder in Nashville, Tennessee.
+eleventyComputed:
+  title: "{{ index.title }}"
+  description: "{{ index.description }}"
 permalink: /
 ---
+{% macro textLink(link, light = false) %}
+  <a class="text-link{% if light %} text-link--light{% endif %}" href="{{ link.url }}">{{ link.label }} <span aria-hidden="true">→</span></a>
+{% endmacro %}
+
+{% macro sectionHeading(section) %}
+  <div class="section-heading">
+    <div>
+      <p class="kicker">{{ section.kicker }}</p>
+      <h2>{{ section.heading }}</h2>
+    </div>
+    {{ textLink(section.link) }}
+  </div>
+{% endmacro %}
+
 <section class="hero">
   <div class="hero__copy">
-    <p class="hero__place">Nashville, Tennessee</p>
-    <h1>Reading scripture with widows, strangers, and communities of faith.</h1>
-    <p class="hero__lede">Stephanie Wyatt is an ordained Baptist minister, biblical interpreter, and educator whose work brings critical inquiry into conversation with pastoral care.</p>
+    <p class="hero__place">{{ index.hero.place }}</p>
+    <h1>{{ index.hero.heading }}</h1>
+    <p class="hero__lede">{{ index.hero.lede }}</p>
     <div class="hero__actions">
-      <a class="button button--light" href="/projects/">Explore the work</a>
-      <a class="text-link text-link--light" href="/contact/">Begin a conversation <span aria-hidden="true">→</span></a>
+      {% for action in index.hero.actions %}
+        {% if action.variant == "button" %}
+          <a class="button button--light" href="{{ action.url }}">{{ action.label }}</a>
+        {% else %}
+          {{ textLink(action, true) }}
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
+  {% set portrait = index.hero.portrait %}
   <figure class="hero__portrait">
-    <img src="/images/Pastor_Stephanie_Wyatt_web.webp" srcset="/images/Pastor_Stephanie_Wyatt_web-833.webp 833w, /images/Pastor_Stephanie_Wyatt_web-1200.webp 1200w, /images/Pastor_Stephanie_Wyatt_web.webp 1665w" sizes="(max-width: 54rem) 100vw, 33vw" alt="Stephanie Wyatt" width="1200" height="1234" fetchpriority="high">
-    <figcaption>Minister · educator · teacher-scholar</figcaption>
+    <img src="{{ portrait.src }}" srcset="{{ portrait.srcset }}" sizes="{{ portrait.sizes }}" alt="{{ portrait.alt }}" width="{{ portrait.width }}" height="{{ portrait.height }}" fetchpriority="high">
+    <figcaption>{{ portrait.caption }}</figcaption>
   </figure>
 </section>
 
 <section class="home-intro section-shell">
-  <p class="kicker">A life shaped by teaching</p>
+  <p class="kicker">{{ index.intro.kicker }}</p>
   <div class="home-intro__grid">
-    <h2>One foot in the church, one in the academy.</h2>
+    <h2>{{ index.intro.heading }}</h2>
     <div>
-      <p class="lede">As the daughter and granddaughter of educators, teaching and learning are primary ways Stephanie relates to the world.</p>
-      <p>Her work encourages critical inquiry, empathetic attention to unfamiliar texts and cultures, and theological formation that considers the whole person.</p>
-      <a class="text-link" href="/about/">More about Stephanie <span aria-hidden="true">→</span></a>
+      <p class="lede">{{ index.intro.lede }}</p>
+      {% for paragraph in index.intro.body %}<p>{{ paragraph }}</p>{% endfor %}
+      {{ textLink(index.intro.link) }}
     </div>
   </div>
 </section>
 
 <section class="work-band">
   <div class="section-shell">
-    <div class="section-heading">
-      <div>
-        <p class="kicker">Selected work</p>
-        <h2>Ministry, scholarship, and teaching.</h2>
-      </div>
-      <a class="text-link" href="/projects/">View all selected work <span aria-hidden="true">→</span></a>
-    </div>
+    {{ sectionHeading(index.work) }}
     <div class="work-list">
-      <a href="/ministry/"><span>Ministry</span><strong>Collaborative congregational life and spiritual formation</strong><span aria-hidden="true">↗</span></a>
-      <a href="/jezebel/"><span>Publication</span><strong>Jezebel, Elijah, and the Widow of Zarephath</strong><span aria-hidden="true">↗</span></a>
-      <a href="/teaching/"><span>Teaching</span><strong>Critical inquiry with an empathetic heart</strong><span aria-hidden="true">↗</span></a>
+      {% for item in index.work.items %}
+        <a href="{{ item.url }}"><span>{{ item.label }}</span><strong>{{ item.title }}</strong><span aria-hidden="true">↗</span></a>
+      {% endfor %}
     </div>
   </div>
 </section>
 
 <section class="latest section-shell">
-  <div class="section-heading">
-    <div><p class="kicker">From the archive</p><h2>Writing and reflection.</h2></div>
-    <a class="text-link" href="/blog/">Browse the archive <span aria-hidden="true">→</span></a>
-  </div>
+  {{ sectionHeading(index.latest) }}
   <div class="post-grid">
-    {% for post in collections.posts | reverse %}{% if loop.index <= 3 %}
+    {% for post in collections.posts | reverse %}{% if loop.index <= index.latest.limit %}
       <article class="h-entry">
         <p><time class="dt-published" datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
         <h3><a class="p-name u-url" href="{{ post.url }}">{{ post.data.title | safe }}</a></h3>

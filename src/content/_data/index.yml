@@ -1,0 +1,61 @@
+# Content for the home page (src/content/index.njk).
+title: Stephanie M. Wyatt
+description: Ordained Baptist minister, biblical interpreter, educator, and community builder in Nashville, Tennessee.
+
+hero:
+  place: Nashville, Tennessee
+  heading: Reading scripture with widows, strangers, and communities of faith.
+  lede: Stephanie Wyatt is an ordained Baptist minister, biblical interpreter, and educator whose work brings critical inquiry into conversation with pastoral care.
+  actions:
+    - label: Explore the work
+      url: /projects/
+      variant: button
+    - label: Begin a conversation
+      url: /contact/
+      variant: link
+  portrait:
+    src: /images/BWIM_headshot_full-1200.webp
+    srcset: >-
+      /images/BWIM_headshot_full-833.webp 833w,
+      /images/BWIM_headshot_full-1200.webp 1200w,
+      /images/BWIM_headshot_full-1665.webp 1665w
+    sizes: "(max-width: 54rem) 100vw, 33vw"
+    width: 1200
+    height: 1800
+    alt: Stephanie Wyatt
+    caption: Minister · educator · teacher-scholar
+
+intro:
+  kicker: A life shaped by teaching
+  heading: One foot in the church, one in the academy.
+  lede: As the daughter and granddaughter of educators, teaching and learning are primary ways Stephanie relates to the world.
+  body:
+    - Her work encourages critical inquiry, empathetic attention to unfamiliar texts and cultures, and theological formation that considers the whole person.
+  link:
+    label: More about Stephanie
+    url: /about/
+
+work:
+  kicker: Selected work
+  heading: Ministry, scholarship, and teaching.
+  link:
+    label: View all selected work
+    url: /projects/
+  items:
+    - label: Ministry
+      title: Collaborative congregational life and spiritual formation
+      url: /ministry/
+    - label: Publication
+      title: Jezebel, Elijah, and the Widow of Zarephath
+      url: /jezebel/
+    - label: Teaching
+      title: Critical inquiry with an empathetic heart
+      url: /teaching/
+
+latest:
+  kicker: From the archive
+  heading: Writing and reflection.
+  link:
+    label: Browse the archive
+    url: /blog/
+  limit: 3

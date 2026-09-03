@@ -7,7 +7,7 @@ export function shouldPublish(data = {}) {
 }
 
 export default function (eleventyConfig) {
-  eleventyConfig.addDataExtension("yaml", (contents) => YAML.parse(contents));
+  eleventyConfig.addDataExtension("yaml,yml", (contents) => YAML.parse(contents));
   eleventyConfig.addGlobalData("currentYear", () => new Date().getUTCFullYear());
   eleventyConfig.addGlobalData("siteCss", () => readFileSync("src/public/assets/css/site.css", "utf8"));
   eleventyConfig.addPassthroughCopy({ "src/public/": "/" });
